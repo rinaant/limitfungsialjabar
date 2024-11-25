@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limit Fungsi Aljabar</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"/>
+      <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    </head>
+    <style type="text/css"> 
+       body {
+      background-image: url('gambar3.png') !important;
+    }
+
+
+
+        /* Efek hover untuk tombol navigasi */
+      header button {
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        border-radius:6px;
+        padding: 8px 12px;
+      }
+      
+      /* Warna tombol saat hover */
+      header button:hover {
+        background-color: #f47cb4; /* Warna pink lebih tua */
+        color: #1c0d15; /* Tetap dengan warna teks */
+        transform: scale(1.05); /* Tombol sedikit membesar */
+        box-shadow: 0 4px 8px rgba(251, 188, 222, 0.3); /* Tambahkan bayangan */
+      }
+      h1.typing-effect {
+        font-size: 2.5rem;
+        color: #1c0d15;
+        font-weight: 800;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 2px solid #1c0d15;
+      }
+  </style>
+  <body>
+    <div style='font-family: Manrope, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f3e7ee] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#1c0d15]">
+            <div class="size-12">
+             <img src="gambar1.png">
+            </div>
+            <h2 class="text-[#1c0d15] text-lg font-bold leading-tight tracking-[-0.015em]">Kelompok 5</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <button onclick="window.location.href='index.html'">Beranda</button>
+              <button onclick="window.location.href='materi.html'">Materi</button>
+              <button onclick="window.location.href='kalkulator.html'">Kalkulator</button>
+              <button onclick="window.location.href='kuis.html'">Kuis</button>
+              <button onclick="window.location.href='about.html'">Tentang Kami</button>
+            </div>
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="@container">
+              <div class="flex flex-col gap-6 px-4 py-10 @[490px]:gap-8 @[864px]:flex-row">
+                <div>
+                  <img src="gambar2.png">
+                </div>
+                <div class="flex flex-col gap-6 @[480px]:min-w-[400px] @[480px]:gap-8 @[864px]:justify-center">
+                  <h1
+                    class="text-[#1c0d15] text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] text-center"
+                    class="typing-effect" id="typing-title">
+                  </h1>
+                  <label class="flex flex-col min-w-40 h-14 w-full max-w-[480px] @[480px]:h-16">
+                    <div class="flex w-full flex-1 items-stretch rounded-xl h-full">
+                    </div>
+                    <div class="flex justify-center py-6">
+                      <button
+                        onclick="window.location.href='materi.html'"
+                        class="px-6 py-3 bg-[#e45695] text-white text-lg font-semibold rounded-xl shadow-lg hover:bg-[#f47cb4]"
+                      >
+                        Klik untuk Akses Materi
+                      </button>
+                    </div>
+                  </label>
+          
+                </div>
+              </div>
+            </div>
+           
+            <h2 class="text-[#1c0d15] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Limit Fungsi Aljabar</h2>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+              <div class="flex flex-col gap-3 pb-3">
+                <p>Apakah kamu menyadari dalam menjalani kehidupan sehari-hari ini,
+                    ternyata berkaitan erat dengan konsep  matematika? Tidak hanya pada konsep hitungan dasar saja, 
+                    tetapi bahkan pada konsep limit fungsi sekalipun. 
+                    Ketika tengah berjalan-jalan melewati tol, apakah kamu pernah memandang di kejauhan jalan raya yang lurus itu.
+                    Lantas melihat kendaraan-kendaraan yang melintasi kita bergerak semakin jauh dan ukurannya juga semakin kecil. 
+                    Nah, hal itu menandakan bahwa kita memiliki sebuah batas. Tidak hanya pada penglihatan saja, 
+                    tetapi juga ada ambang batas pendengaran, batas kemampuan memikul beban, batas kemampuan membeli sebuah barang, dan lainnya.
+                </p>
+                <p>Apabila di dalam  ilmu matematika, batas tersebut dinamakan dengan istilah “limit”. 
+                    Fungsi limit dapat berkaitan dengan beberapa cabang matematika lainnya, antara lain aljabar dan trigonometri. 
+                    Nah kali ini kita akan membahas mengenai limit fungsi aljabar. 
+                    Apa sih limit fungsi aljabar itu? Apa saja sifat-sifat dalam limit fungsi aljabar ini? Bagaimana metode pemecahan dalam limit fungsi aljabar ini? 
+                    Yuk, simak materi berikut ini supaya kamu memahami hal-hal tersebut!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // JavaScript untuk efek mengetik
+      const title = "Kalkulus 1: Limit Fungsi Aljabar";
+      const typingElement = document.getElementById("typing-title");
+
+      let i = 0;
+
+      function typeEffect() {
+        if (i < title.length) {
+          typingElement.innerHTML += title.charAt(i);
+          i++;
+          setTimeout(typeEffect, 100); // Kecepatan mengetik (100ms per huruf)
+        } else {
+          typingElement.style.borderRight = "none"; // Menghilangkan kursor setelah selesai
+        }
+      }
+
+      // Mulai efek mengetik
+      document.addEventListener("DOMContentLoaded", typeEffect);
+    </script>
+  </body>
+</html>

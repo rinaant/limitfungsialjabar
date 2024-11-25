@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Cards</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="anonymous">
+    <link 
+        rel="stylesheet" 
+        as="style" 
+        onload="this.rel='stylesheet'" 
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Sans:wght@400;500;700;900&display=swap"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+         body {
+      background-image: url('gambar3.jpg') !important;
+    }
+
+        body {
+            font-family: 'Manrope', 'Noto Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fcf8fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+
+            /* Efek hover untuk tombol navigasi */
+        header button {
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border-radius:6px;
+            padding: 8px 12px;
+        }
+        
+        /* Warna tombol saat hover */
+        header button:hover {
+            background-color: #f47cb4; /* Warna pink lebih tua */
+            color: #1c0d15; /* Tetap dengan warna teks */
+            transform: scale(1.05); /* Tombol sedikit membesar */
+            box-shadow: 0 4px 8px rgba(251, 188, 222, 0.3); /* Tambahkan bayangan */
+        }
+                }
+
+        .profile-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: nowrap; /* Memastikan foto ditampilkan dalam satu baris */
+            justify-content: center; /* Menempatkan foto di tengah */
+            padding: 20px;
+            overflow-x: auto; /* Agar bisa scroll jika gambar melebihi lebar layar */
+        }
+
+        .profile-card {
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 15px;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 4px solid #e4e4e4;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-card h3 {
+            font-size: 1.2rem;
+            color: #1c0d15;
+            margin: 10px 0 5px;
+            font-weight: 700;
+        }
+
+        .profile-card p {
+            font-size: 0.9rem;
+            color: #555555;
+            margin: 0 0 15px;
+        }
+
+        .layout-content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Efek hover untuk tombol navigasi */
+        header button {
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border-radius: 6px;
+            padding: 8px 12px;
+        }
+
+        /* Warna tombol saat hover */
+        header button:hover {
+            background-color: #fbbcde;
+            color: #1c0d15;
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(251, 188, 222, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-[#fcf8fa]">
+    <div class="relative flex size-full min-h-screen flex-col overflow-x-hidden">
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f3e7ee] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#1c0d15]">
+            <div class="size-12">
+             <img src="gambar1.png">
+            </div>
+            <h2 class="text-[#1c0d15] text-lg font-bold leading-tight tracking-[-0.015em]">Kelompok 5</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <button onclick="window.location.href='index.html'">Beranda</button>
+              <button onclick="window.location.href='materi.html'">Materi</button>
+              <button onclick="window.location.href='kalkulator.html'">Kalkulator</button>
+              <button onclick="window.location.href='kuis.html'">Kuis</button>
+              <button onclick="window.location.href='about.html'">Tentang Kami</button>
+            </div>
+          </div>
+        </header>
+
+            <div class="px-40 flex flex-1 justify-center py-5">
+              <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                  <div class="flex flex-wrap justify-between gap-3 p-4">
+                      <div class="flex min-w-72 flex-col gap-3 font-bold">
+                        <h1 style="font-size: 40px; text-align: center; color: #1c0d15; font-weight: bold; margin-bottom: 30px;">
+                          Anggota Kelompok
+                        </h1>
+                        
+                      </div>
+                  </div>
+                  <div class="profile-container">
+                      <div class="profile-card">
+                          <div class="profile-img">
+                              <img src="Ulfi.jpg" alt="Ulfi Luthfiani">
+                          </div>
+                          <h3>Ulfi Luthfiani</h3>
+                          <p>2470006111006</p>
+                      </div>
+                      <div class="profile-card">
+                          <div class="profile-img">
+                              <img src="Rina2.jpg" alt="Rina Natalia">
+                          </div>
+                          <h3>Rina Natalia</h3>
+                          <p>247006111033</p>
+                      </div>
+                      <div class="profile-card">
+                          <div class="profile-img">
+                              <img src="Yulita.jpg" alt="Yulita Rahayu">
+                          </div>
+                          <h3>Yulita Rahayu</h3>
+                          <p>247006111035</p>
+                      </div>
+                      <div class="profile-card">
+                          <div class="profile-img">
+                              <img src="FadhilaBaru.jpg" alt="Fadhila Hendani">
+                          </div>
+                          <h3>Fadhila Hendani</h3>
+                          <p>247006111053</p>
+                      </div>
+                  </div>
+              </div>
+          </div>          
+</body>
+</html>
+

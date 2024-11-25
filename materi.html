@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="script.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Limit Fungsi Aljabar</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <style> 
+   body {
+      background-image: url('gambar3.png') !important;
+    }
+    *
+        /* Target hanya elemen di dalam #metode-limit */
+#metode-limit .body {
+  width: 100vw;
+  height: 100vh;
+  background: #fedfe6;
+  padding-top: 50px;
+}
+#metode-limit.metode-container {
+  display: flex;
+  justify-content: space-around; /* Sebar elemen secara merata */
+  flex-wrap: wrap; /* Agar elemen pindah ke bawah jika layar kecil */
+  gap: 20px; /* Jarak antar metode */
+  padding: 20px;
+}
+#metode-limit {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: arial;
+  transition: 0.5s;
+}
+#metode-limit .h1 {
+  font-size: 25px;
+  padding-top: 20px;
+  color: #B63e5D;
+}
+#metode-limit .h2 {
+  display: flex; /* Mengatur elemen anak dalam baris horizontal */
+  justify-content: space-around; /* Spasi merata di antara elemen */
+  align-items: flex-start; /* Menjajarkan elemen ke atas */
+  gap: 20px; /* Jarak antar kotak */
+  flex-wrap: wrap; /* Agar responsif saat layar kecil */
+  margin-top: 20px;
+  padding: 10px;
+}
+
+#metode-limit .box {
+  flex: 1 1 30%; /* Proporsi ukuran fleksibel, minimal 30% lebar */
+  max-width: 300px; /* Batas maksimal lebar */
+  text-align: center;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#metode-limit .box img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+#metode-limit .box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#metode-limit .box h3 {
+  font-size: 22px;
+  color: #D01760;
+  margin-top: 15px;
+}
+
+#metode-limit .box p {
+  font-size: 16px;
+  color: #1c0d15;
+  padding: 10px;
+}
+
+
+
+
+    /* Efek hover untuk tombol navigasi */
+  header button {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius:6px;
+    padding: 8px 12px;
+  }
+  
+  /* Warna tombol saat hover */
+  header button:hover {
+    background-color: #f47cb4; /* Warna pink lebih tua */
+    color: #1c0d15; /* Tetap dengan warna teks */
+    transform: scale(1.05); /* Tombol sedikit membesar */
+    box-shadow: 0 4px 8px rgba(251, 188, 222, 0.3); /* Tambahkan bayangan */
+  }
+  .answer-container {
+  margin: 16px 8px; /* Atur margin luar untuk keseluruhan kontainer */
+}
+
+.answer-container .question {
+  margin-bottom: 8px; /* Jarak bawah dari teks soal */
+}
+
+.answer-container button {
+  margin-left: 8px; /* Jarak tombol ke kiri */
+  margin-bottom: 16px; /* Jarak tombol ke elemen bawah */
+}
+
+.answer-container .answer {
+  margin: 8px 16px; /* Margin kiri-kanan dan atas-bawah untuk bagian jawaban */
+  padding: 8px;
+  background-color: #ffffff; /* Latar belakang jawaban untuk pembeda */
+  border-left: 4px solid #f47cb3; /* Indikator warna di kiri */
+}
+
+  </style>
+  <body>
+    
+    <div style='font-family: Manrope, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f3e7ee] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#1c0d15]">
+           <div class="size-12">
+             <img src="gambar1.png">
+            </div>
+            <h2 class="text-[#1c0d15] text-lg font-bold leading-tight tracking-[-0.015em]">Kelompok 5</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <button onclick="window.location.href='index.html'">Beranda</button>
+              <button onclick="window.location.href='materi.html'">Materi</button>
+              <button onclick="window.location.href='kalkulator.html'">Kalkulator</button>
+              <button onclick="window.location.href='kuis.html'">Kuis</button>
+              <button onclick="window.location.href='about.html'">Tentang Kami</button>
+            </div>
+          </div>
+        </header>
+           
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <div class="flex min-w-72 flex-col gap-3">
+                <p style="font-size: 40px; text-align: center; color: #1c0d15; font-weight: bold;">Limit Fungsi Aljabar</p>
+                <h2 class="text-[#1c0d15] text-[24px] font-bold leading-tight pb-3 pt-5">Pengertian Limit Fungsi Aljabar</h2>
+                <p class="text-[#1c0d15] text-[18px] font-normal leading-normal-[-0.015em] px-1">
+                  Limit adalah suatu nilai yang menggunakan pendekatan fungsi, ketika hendak mendekati nilai tertentu. Singkatnya, limit ini dianggap sebagai nilai yang menuju suatu batas.
+                </p>
+              </div>
+              <div class="text-[#1c0d15] text-[17px] font-bold leading-tight tracking-[-0.015em] px-4">
+                <h2>Rumus Dasar Limit</h2>
+                <p>$$ \lim_{{x \to a}} f(x) = L $$</p>
+            </div>
+            </div>
+            <h2 class="text-[#1c0d15] text-[24px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Sifat-Sifat Limit Fungsi Aljabar</h2>
+            <p class="text-[#1c0d15] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              <section class="limit-properties">
+                <div class="property">
+                    <h3 class="text-[#1c0d15] text-[18px] font-bold leading-tight tracking-[-0.015em] px-4">1. Limit Identitas:</h3>
+                    <p class="limit-formula-[-0.015em]  px-8">
+                        \( \displaystyle \lim_{{x \to a}} x = a \)
+                    </p>
+                </div>
+                <div class="property">
+                <h3 class="text-[#1c0d15] text-[18px] font-bold leading-tight tracking-[-0.015em] px-4">2. Limit Penjumlahan:</h3>
+                <p class="limit-formula-[-0.015em]  px-8">
+                    \( \displaystyle \lim_{{x \to a}} f(x) + g(x) = \lim_{{x \to a}} f(x) + \lim_{{x \to a}} g(x) \)
+                </p>
+            </div>
+            <div class="property">
+                <h3 class="text-[#1c0d15] text-[18px] font-bold leading-tight tracking-[-0.015em] px-4">3. Limit Pengurangan:</h3>
+                <p class="limit-formula-[-0.015em]  px-8">
+                    \( \displaystyle \lim_{{x \to a}} [f(x) - g(x)] = \lim_{{x \to a}} f(x) - \lim_{{x \to a}} g(x) \)
+                </p>
+            </div>
+
+            <div class="property">
+                <h3 class="text-[#1c0d15] text-[18px] font-bold leading-tight tracking-[-0.015em] px-4">4. Limit Perkalian:</h3>
+                <p class="limit-formula-[-0.015em]  px-8">
+                    \( \displaystyle \lim_{{x \to a}} [f(x) \cdot g(x)] = \lim_{{x \to a}} f(x) \cdot \lim_{{x \to a}} g(x) \)
+                </p>
+            </div>
+
+            <div class="property">
+                <h3 class="text-[#1c0d15] text-[18px] font-bold leading-tight tracking-[-0.015em] px-4">5. Limit Perkalian Skalar:</h3>
+                <p class="limit-formula-[-0.015em]  px-8">
+                    \( \displaystyle \lim_{{x \to a}} [c \cdot f(x)] = c \cdot \lim_{{x \to a}} f(x) \)
+                </p>
+            </div>
+    
+                <div class="property">
+                    <h3 class="text-[#1c0d15] text-[18px] font-bold leading-tight tracking-[-0.015em] px-4">6. Limit Konstan:</h3>
+                <p class="limit-formula-[-0.015em]  px-8">
+                    \( \displaystyle \lim_{{x \to a}} c = c \)
+                </p>
+            </div>
+
+            <div class="property">
+                <h3 class="text-[#1c0d15] text-[18px] font-bold leading-tight tracking-[-0.015em] px-4">7. Limit Pembagian:</h3>
+                <p class="limit-formula-[-0.015em]  px-8">
+                    \( \displaystyle \lim_{{x \to a}} \frac{f(x)}{g(x)} = \frac{\lim_{{x \to a}} f(x)}{\lim_{{x \to a}} g(x)} \quad (g(x) \neq 0) \)
+                </p>
+            </div>
+
+            <div class="property">
+                <h3 class="text-[#1c0d15] text-[18px] font-bold leading-tight tracking-[-0.015em] px-4">8. Limit Akar:</h3>
+                <p class="limit-formula-[-0.015em]  px-8">
+                    \( \displaystyle \lim_{{x \to a}} \sqrt[n]{f(x)} = \sqrt[n]{\lim_{{x \to a}} f(x)} \)
+                </p>
+            </div>
+
+            <div class="property">
+                <h3 class="text-[#1c0d15] text-[18px] font-bold leading-tight tracking-[-0.015em] px-4">9. Limit Pangkat Sembarang:</h3>
+                <p class="limit-formula-[-0.015em]  px-8">
+                    Jika \( \displaystyle \lim_{{x \to a}} f(x) = L \), maka:
+                </p>
+                 <ul>
+                    <li class="limit-formula-[-0.015em]  px-8">\( \displaystyle \lim_{{x \to a}} [f(x)]^n = [f(x)]^n = L^n \)</li>
+                    <li class="limit-formula-[-0.015em]  px-8">\( \displaystyle \lim_{{x \to a}} [f(x)]^{-n} = \frac{1}{[f(x)]^n} = \frac{1}{L^n} \quad (L \neq 0) \)</li>
+                    <li class="limit-formula-[-0.015em]  px-8">\( \displaystyle \lim_{{x \to a}} [f(x)]^{1/n} = \sqrt[n]{f(x)} = \sqrt[n]{L} \quad (L \geq 0) \)</li>
+                </ul>
+            </div>   
+            </p>
+            <h2 id="metode-penyelesaian" class="text-[#1c0d15] text-[24px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Metode Penyelesaian Limit Fungsi Aljabar</h2>
+            <p class="text-[#1c0d15] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              <section class="limit-properties">
+                <div class="property">
+                  <div class="row">
+                    <div id="metode-limit" class="metode-container">
+                      <div class="box">
+                        <img src="gambarSubstitusi.png" alt="Metode Substitusi">
+                          <h3 class= "font-bold">Metode Substitusi</h3>
+                          <p>Metode substitusi digunakan untuk menyelesaikan limit dengan cara langsung menggantikan nilai variabel yang mendekati suatu angka  (misalnya \( x \to a \)) ke dalam fungsi.</p>
+                      </div>
+                      <div class="box">
+                        <img src="gambarPemfaktoran.png" alt="Metode Pemfaktoran">
+                          <h3 class= "font-bold">Metode Pemfaktoran</h3>
+                          <p>Metode pemfaktoran harus melalui proses pemfaktoran terlebih dahulu agar mendapatkan nilai pasti. Setelah mendapatkan nilainya, substitusikan memakai rumusnya yaitu \( x \to a \).</p>
+                      </div>
+                      <div class="box">
+                        <img src="gambarKalisekawan.png" alt="Metode Kali Sekawan">
+                          <h3 class= "font-bold">Metode Kali Sekawan</h3>
+                          <p>Mengalikan dengan bentuk sekawan digunakan dalam limit fungsi aljabar yang mengandung akar, agar hasilnya menjadi bilangan rasional.</p>
+                      </div>
+              
+              
+              
+            <h2 class="text-[#1c0d15] text-[24px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Contoh Soal Limit Fungsi Aljabar</h2>
+              <div class="container">
+                <h1 class="text-[#1c0d15] text-[20px] font-bold leading-tight tracking-[-0.015em] px-5">Latihan Soal Limit</h1>
+                
+              <div class="answer-container">
+                <div class="answer-container">
+                  <div class="question">
+                    <p class="text-[#1c0d15] text-[17px] font-normal px-2">
+                      Soal 1: <br>
+                      \(\displaystyle \lim_{{x \to 5}} \frac{-5 + 3x}{2x - 1} \)
+                    </p>
+                  </div>
+                  <button class="bg-[#f47cb3] text-white px-4 py-2 rounded" onclick="tampilkanJawaban('jawaban1')">
+                    Lihat Jawaban
+                  </button>
+                  <div id="jawaban1" class="answer" style="display: none;">
+                    <p>Penyelesaian:</p>
+                    <p>Substitusi \( x = 5 \):</p>
+                    <p>\( \frac{-5 + 3 \cdot 5}{2 \cdot 5 - 1} = \frac{10}{9} \)</p>
+                  </div>
+                </div>
+                
+<hr class="my-4">
+
+<!-- Soal 2 -->
+<div class="answer-container">
+    <div class="question">
+        <p class="text-[#1c0d15] text-[17px] font-normal px-2">Soal 2: <br>
+        \(\displaystyle \lim_{{x \to 2}} \frac{x^2 - 3x}{x^2 - 9} \)</p>
+    </div>
+    <button class="bg-[#f47cb3] text-white px-4 py-2 rounded" onclick="tampilkanJawaban('jawaban2')">Lihat Jawaban</button>
+    <div id="jawaban2" class="answer" style="display: none;">
+        <p class="text-[#1c0d15] text-[17px] px-8">Penyelesaian:</p>
+        <p class="px-8">
+            Faktorkan:<br>
+            \( \frac{x(x - 3)}{(x - 3)(x + 3)} = \frac{x}{x + 3} \)<br>
+            Substitusi \( x = 2 \):<br>
+            \( \frac{2}{5} \)
+        </p>
+    </div>
+</div>
+<hr class="my-4">
+
+<!-- Soal 3 -->
+<div class="answer-container">
+    <div class="question">
+        <p class="text-[#1c0d15] text-[17px] font-normal px-2">Soal 3: <br>
+        \(\displaystyle \lim_{{x \to -2}} \frac{x^2 - 2x - 8}{x^2 + x - 2} \)</p>
+    </div>
+    <button class="bg-[#f47cb3] text-white px-4 py-2 rounded" onclick="tampilkanJawaban('solution1')">Lihat Jawaban</button>
+    <div id="solution1" class="answer" style="display: none;">
+        <p class="text-[#1c0d15] text-[17px] px-8">Penyelesaian:</p>
+        <p class="px-8">
+            Faktorkan:<br>
+            \( \frac{(x + 2)(x - 4)}{(x + 2)(x - 1)} = \frac{x - 4}{x - 1} \)<br>
+            Substitusi \( x = -2 \):<br>
+            \( \frac{-6}{-3} = 2 \)
+        </p>
+    </div>
+</div>
+<hr class="my-4">
+      
+            <!-- Soal 4 -->
+<div class="answer-container">
+  <div class="question">
+    <p class="text-[#1c0d15] text-[17px] font-normal px-2">
+      Soal 4: <br>
+      \(\displaystyle \lim_{{x \to 3}} \frac{x - 3}{2x - 6} \)
+    </p>
+  </div>
+  <button class="bg-[#f47cb3] text-white px-4 py-2 rounded" onclick="tampilkanJawaban('solution2')">
+    Lihat Jawaban
+  </button>
+  <div id="solution2" class="answer" style="display: none;"></div>
+</div>
+
+<hr class="my-4">
+<div class="answer-container">
+  <div class="question">
+      <p class="text-[#1c0d15] text-[17px] font-normal px-2">Soal 5: <br>
+        \( \displaystyle \lim_ {x \to 16} \frac{x - 16}{\sqrt{x} - 4} \)
+      </p>
+    </div>
+    <button class="bg-[#f47cb3] text-white px-4 py-2 rounded" onclick="tampilkanJawaban('solution3')">
+      Lihat Jawaban
+    </button>
+    <div id="solution3" class="answer" style="display: none;"></div>
+  </div>
+    <script>
+      function tampilkanJawaban(jawabanId) {
+          const jawabanElement = document.getElementById(jawabanId);
+
+          switch (jawabanId) {
+              case 'jawaban1':
+                  const x1 = 5;
+                  const pembilang1 = -5 + 3 * x1;
+                  const penyebut1 = 2 * x1 - 1;
+                  const hasil1 = (pembilang1 / penyebut1).toFixed(2);
+                  jawabanElement.innerHTML = `
+                      <p>Penyelesaian Soal 1: <br>
+                      \\( \\lim_{{x \\to 5}} \\frac{-5 + 3x}{2x - 1} \\)</p>
+                      Substitusi \\( x = 5 \\)<br>
+                      \\[\\frac{-5 + 3 \\cdot 5}{2 \\cdot 5 - 1} = \\frac{${pembilang1}}{${penyebut1}} = ${hasil1}\\]
+                  `;
+                  break;
+              case 'jawaban2':
+                  const x2 = 2;
+                  const pembilang2 = x2 * (x2 - 3);
+                  const penyebut2 = (x2 - 3) * (x2 + 3);
+                  const hasil2 = (x2 / (x2 + 3)).toFixed(2);
+            jawabanElement.innerHTML = `
+                 <h2>Penyelesaian Soal 2:</h>
+                 <br>\\( \\lim_{{x \\to 2}} \\frac{x^2 - 3x}{x^2 - 9} \\)</p>
+                  Faktorkan: <br>
+                  \\[\\frac{x(x - 3)}{(x - 3)(x + 3)} = \\frac{x}{x + 3}\\]<br>
+                  Substitusi \\( x = 2 \\): <br>
+                  \\[\\frac{2}{2 + 3} = ${hasil2}\\]
+                  `;
+              break;
+            case 'solution1':
+            jawabanElement.innerHTML = `
+                <h2>Penyelesaian Soal 3:</h2>
+                <strong>Langkah 1:</strong>
+                <br> Substitusi langsung \\( x = -2 \\)
+                <br> \\( = \\frac{(-2)^2 - 2(-2) - 8}{(-2)^2 + (-2) - 2} \\)
+                <br> \\( = \\frac{4 + 4 - 8}{4 - 2 - 2} \\)
+                <br> \\( = \\frac{0}{0} \\) &nbsp; <strong>(bentuk tak tentu)</strong> 
+            </p>
+            <p>
+                <strong>Langkah 2:</strong>
+                <br> Faktorkan pembilang dan penyebut
+                <br> \\( \\lim_{{x \\to -2}} \\frac{x^2 - 2x - 8}{x^2 + x - 2} \\)
+                <br> \\( = \\lim_{{x \\to -2}} \\frac{(x + 2)(x - 4)}{(x + 2)(x - 1)} \\)
+            </p>
+            <p>
+                Sederhanakan dengan membagi nilai yang sama \\((x + 2\\))
+                <br> \\( = \\lim_{{x \\to -2}} \\frac{x - 4}{x - 1} \\) </p>
+            </p>
+            <p>
+                Substitusi \\( x = -2 \\)
+                <br> \\( = \\frac{-2 - 4}{-2 - 1} \\)
+                <br> \\( = \\frac{-6}{-3} \\) 
+                <br> \\( = 2 \\)
+            </p>
+            `;
+            break;
+        case 'solution2':
+            jawabanElement.innerHTML = `
+                <h2>Penyelesaian Soal 4:</h2>
+                <strong>Langkah 1:</strong>
+                <br> Substitusi langsung \\( x = 3 \\)
+                <br> \\( = \\frac{3 - 3}{2(3) - 6} \\) 
+                <br> \\( = \\frac{0}{0} \\) &nbsp; <strong>(bentuk tak tentu)</strong> 
+                </p>
+            <p>
+                <strong>Langkah 2:</strong>
+                <br> Faktorkan pembilang dan penyebut 
+                <br> \\( \\lim_{{x \\to 3}} \\frac{x - 3}{2x - 6} \\) <br> \\( = \\lim_{{x \\to 3}} \\frac{x - 3}{2(x - 3)} \\) 
+                </p>
+            <p>
+                Sederhanakan dengan membagi nilai yang sama \\((x - 3 \\))
+                <br> \\( = \\lim_{{x \\to 3}} \\frac{1}{2} \\) 
+                </p> 
+                <p> Hasil akhir: 
+                <br> \\( = \\frac{1}{2} \\)
+            </p>
+            `;
+            break;
+            case 'solution3':
+    jawabanElement.innerHTML = `
+        <h2>Penyelesaian Soal 5:</h2>
+        <div class="code">
+        \\( = \\frac{x - 16}{\\sqrt{x} - 4} \\cdot \\frac{\\sqrt{x} + 4}{\\sqrt{x} + 4} = \\frac{(x - 16)(\\sqrt{x} + 4)}{(\\sqrt{x})^2 - 4^2} \\)
+        </div>
+        <div class="code">
+        \\( = \\frac{(x - 16)(\\sqrt{x} + 4)}{x - 16} \\)
+        </div>
+        <div class="code">
+        \\( = \\sqrt{x} + 4 \\)
+        </div>
+        <div class="code">
+        \\( = \\sqrt{16} + 4 = 4 + 4 = 8 \\)
+        </div>
+        <h2>Jawaban:</h2>
+        <p>
+            \\( 8 \\)
+        </p>
+    `;
+    break;
+
+            
+              default:
+                  jawabanElement.innerHTML = "<p>Jawaban tidak ditemukan.</p>";
+          }
+
+          jawabanElement.style.display = 'block';
+          MathJax.typeset();
+      }
+  </script>
+  </body>
+</html>
